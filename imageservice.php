@@ -10,7 +10,7 @@ define("VALIGN_BOTTOM", "bottom");
 class ImageService {
 
 function buildimage($fvsImageTitle, $fvsImageCount, $fvsPrefix = NULL, $fvsSuffix = NULL) {
-	$tvsImageName = "/var/www/html/images/600400/".mt_rand(1,10).".jpg";
+	$tvsImageName = $_SERVER['DOCUMENT_ROOT']."/images/600400/".mt_rand(1,10).".jpg";
 	$tviImage = imagecreatefromstring(self::getImage($tvsImageName));
 
 //	$tvcBackground = imagecolorallocate($tviImage, mt_rand(50,200), mt_rand(50,200), mt_rand(50,200));
@@ -19,7 +19,7 @@ function buildimage($fvsImageTitle, $fvsImageCount, $fvsPrefix = NULL, $fvsSuffi
 	$tvcForeground = imagecolorallocate($tviImage, 255, 255, 255);
 	$tvcForegroundShadow = imagecolorallocate($tviImage, 25, 25, 25);
 
-	$tvsFontPath = "/var/www/html/fonts/DroidSans.ttf";
+	$tvsFontPath = $_SERVER['DOCUMENT_ROOT']."/fonts/DroidSans.ttf";
 	$tviFontSize = 100;
 
 //	imagettftext($tviImage, 25, 0, 12, 152, $tvcForegroundShadow, $tvsFontPath, $fvsImageTitle);
@@ -84,7 +84,7 @@ function buildimage2($fvsImageTitle, $fvsImageCount) {
 	$height = imagesy($tviImage);
 
 	$imgtmp = imagecreate($width,$height);
-	$textheight = self::imagettftextalignbox($imgtmp, 25, 0, 0, 0, $tvcForeground, "/var/www/html/fonts/DroidSans.ttf", $fvsImagetitle, $width, ALIGN_CENTER);
+	$textheight = self::imagettftextalignbox($imgtmp, 25, 0, 0, 0, $tvcForeground, $_SERVER['DOCUMENT_ROOT']."/fonts/DroidSans.ttf", $fvsImagetitle, $width, ALIGN_CENTER);
 	imagedestroy($imgtmp);
 	$offsettop = ($height - $textheight)/2;
 	$offsettop2 = ($height - $textheight)/3;
@@ -92,11 +92,11 @@ function buildimage2($fvsImageTitle, $fvsImageCount) {
 	if ($offsettop < 0)
 		$offsettop = 0;
 
-	self::imagettftextblur($tviImage,25,0,$width+3,$offsettop2+3,imagecolorallocate($tviImage, 0, 0, 0),"/var/www/html/fonts/DroidSans.ttf",$fvsImageTitle,5, $width, ALIGN_CENTER); 
-	self::imagettftextalignbox($tviImage, 25, 0, $width, $offsettop2, $tvcForeground, "/var/www/html/fonts/DroidSans.ttf", $fvsImageTitle, $width, ALIGN_CENTER);
+	self::imagettftextblur($tviImage,25,0,$width+3,$offsettop2+3,imagecolorallocate($tviImage, 0, 0, 0),$_SERVER['DOCUMENT_ROOT']."/fonts/DroidSans.ttf",$fvsImageTitle,5, $width, ALIGN_CENTER); 
+	self::imagettftextalignbox($tviImage, 25, 0, $width, $offsettop2, $tvcForeground, $_SERVER['DOCUMENT_ROOT']."/fonts/DroidSans.ttf", $fvsImageTitle, $width, ALIGN_CENTER);
 
-	self::imagettftextblur($tviImage,50,0,$width+3,$offsettop+3,imagecolorallocate($tviImage, 0, 0, 0),"/var/www/html/fonts/DroidSans.ttf",$fvsImageCount,5, $width, ALIGN_RIGHT); 
-	self::imagettftextalignbox($tviImage, 50, 0, $width, $offsettop, $tvcForeground, "/var/www/html/fonts/DroidSans.ttf", $fvsImageCount, $width, ALIGN_RIGHT);
+	self::imagettftextblur($tviImage,50,0,$width+3,$offsettop+3,imagecolorallocate($tviImage, 0, 0, 0),$_SERVER['DOCUMENT_ROOT']."/fonts/DroidSans.ttf",$fvsImageCount,5, $width, ALIGN_RIGHT); 
+	self::imagettftextalignbox($tviImage, 50, 0, $width, $offsettop, $tvcForeground, $_SERVER['DOCUMENT_ROOT']."/fonts/DroidSans.ttf", $fvsImageCount, $width, ALIGN_RIGHT);
 
 
 	return $tviImage;

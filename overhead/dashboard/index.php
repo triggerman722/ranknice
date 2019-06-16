@@ -3,9 +3,9 @@
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/imageservice.php");
-require_once("/var/www/html/overhead/overheadservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/imageservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/overhead/overheadservice.php");
 $tvoMainService = new MainService();
 $tvoImageService = new ImageService();
 $tvoOverheadService = new OverheadService();

@@ -5,8 +5,8 @@ $scope['title'] = "Size";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/size/sizeservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/size/sizeservice.php");
 $tvoMainService = new MainService();
 $tvoSizeService = new SizeService();
 

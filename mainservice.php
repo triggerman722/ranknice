@@ -46,7 +46,7 @@ function savetosession($fvsSessionName, $fvsCacheObject) {
 }
 
 function service($fvsDomainName, $fvsSessionName, $fvoServiceClass) {
-	$tvsCacheDir = "/var/www/html/cache/".$fvsSessionName."/";
+	$tvsCacheDir = $_SERVER['DOCUMENT_ROOT']."/cache/".$fvsSessionName."/";
 
 	if (self::checksession($fvsSessionName)) {
 		error_log("Domain: ".$fvsDomainName." was obtained from session $fvsSessionName.");

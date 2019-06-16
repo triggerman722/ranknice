@@ -5,8 +5,8 @@ $scope['title'] = "DNS";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/dns/dnsservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/dns/dnsservice.php");
 $tvoMainService = new MainService();
 $tvoDNSService = new DNSService();
 

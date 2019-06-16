@@ -5,8 +5,8 @@ $scope['title'] = "Time";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/time/timeservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/time/timeservice.php");
 $tvoMainService = new MainService();
 $tvoTimeService = new TimeService();
 

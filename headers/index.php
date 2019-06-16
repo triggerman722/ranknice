@@ -3,8 +3,8 @@ session_start();
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/headers/headerservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/headers/headerservice.php");
 $tvoMainService = new MainService();
 $tvoHeaderService = new HeaderService();
 

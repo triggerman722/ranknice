@@ -8,9 +8,9 @@
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/imageservice.php");
-require_once("/var/www/html/archive/archiveservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/imageservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/archive/archiveservice.php");
 $tvoMainService = new MainService();
 $tvoImageService = new ImageService();
 $tvoArchiveService = new ArchiveService();

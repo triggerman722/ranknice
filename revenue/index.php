@@ -5,8 +5,8 @@ $scope['title'] = "Revenue";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/revenue/revenueservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/revenue/revenueservice.php");
 $tvoMainService = new MainService();
 $tvoRevenueService = new RevenueService();
 

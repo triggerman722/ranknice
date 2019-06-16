@@ -5,8 +5,8 @@ $scope['title'] = "Speed";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/speed/speedservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/speed/speedservice.php");
 $tvoMainService = new MainService();
 $tvoSpeedService = new SpeedService();
 

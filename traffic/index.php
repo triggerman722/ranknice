@@ -5,8 +5,8 @@ $scope['title'] = "Traffic";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/traffic/trafficservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/traffic/trafficservice.php");
 $tvoMainService = new MainService();
 $tvoTrafficService = new TrafficService();
 

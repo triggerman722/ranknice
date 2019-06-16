@@ -6,8 +6,8 @@ $scope['title'] = "Meta Content Data";
 $ivsDomainName = $_SESSION['domain'];
 $ivsTitle = $_SESSION['title'];
 
-require_once("/var/www/html/mainservice.php");
-require_once("/var/www/html/meta/metaservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/meta/metaservice.php");
 $tvoMainService = new MainService();
 $tvoMetaService = new MetaService();
 

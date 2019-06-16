@@ -5,7 +5,7 @@ $scope['title'] = "Alexa Data";
 
 $ivsDomainName = $_SESSION['domain'];
 
-require_once("/var/www/html/mainservice.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/mainservice.php");
 require_once("./alexaservice.php");
 $tvoMainService = new MainService();
 $tvoAlexaService = new AlexaService();
