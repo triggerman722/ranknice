@@ -1,0 +1,1 @@
+{"firstarchiveformatted":"Friday March 3, 2001 22:36 PM","lastarchiveformatted":"Wednesday June 6, 2019 16:03 PM","monthsumformatted":"388","monthcountformatted":"228","averagedensityformatted":"2","monthmaxformatted":"14","monthminformatted":"0","archiverankformatted":"1,550"}

@@ -20,31 +20,22 @@ class OverheadService {
 
 		$tviGlobalRank = $tvaAlexaData["globalrank"]; 
 
-		$tviMonthlyOverhead = round(609810000*($tviGlobalRank**-1.008));
+		$tviMonthly = round(609810000*($tviGlobalRank**-1.008));
 		//$monthly_traffic_estimate = 104943144672/$tviGlobalRank;
-		$tviAnnualOverhead= $tviMonthlyOverhead*12;
-		$tviDailyOverhead = $tviAnnualOverhead/365;
+		$tviAnnual= $tviMonthly*12;
+		$tviDaily = $tviAnnual/365;
 
-		$tviDaily = number_format($tviDailyOverhead);
-		$tviMonthly = number_format($tviMonthlyOverhead);
-		$tviAnnual = number_format($tviAnnualOverhead);
+                $tviDailyOverhead = $tviDaily / 1000 * 3;
+                $tviMonthlyOverhead = $tviMonthly / 1000 * 3;
+                $tviAnnualOverhead = $tviAnnual / 1000 * 3;
 
-		//https://stackoverflow.com/questions/30927759/how-do-i-get-the-current-cpc-bid-for-a-keyword-in-google-adwords-api
-		//https://stats.wikimedia.org/v2/#/all-projects/reading/total-pageviews
-		//wikipedia is 17,044,313,997, but ranked #5, so #1 would be 85,221,569,985.
-		//even the idea of wikipedia getting 560,361,008 per day seems high.
-		//$tviWikiMonthly = round(85221569985*($tviGlobalRank**-1.008));
-		$tviWikiMonthly = round(85221569985/$tviGlobalRank);
-		$tviWikiAnnual = $tviWikiMonthly*12;
-		$tviWikiDaily = $tviWikiAnnual/365;
+		$tviDailyFormatted = number_format($tviDailyOverhead, 2);
+		$tviMonthlyFormatted = number_format($tviMonthlyOverhead, 2);
+		$tviAnnualFormatted = number_format($tviAnnualOverhead, 2);
 
-		$tviWikiDailyFormatted = number_format($tviWikiDaily);
-		$tviWikiMonthlyFormatted = number_format($tviWikiMonthly);
-		$tviWikiAnnualFormatted = number_format($tviWikiAnnual);
-
-		$tvaOverheadData["dailyformatted"] = $tviDaily;
-		$tvaOverheadData["monthlyformatted"] = $tviMonthly;
-		$tvaOverheadData["annualformatted"] = $tviAnnual;
+		$tvaOverheadData["dailyformatted"] = $tviDailyFormatted;
+		$tvaOverheadData["monthlyformatted"] = $tviMonthlyFormatted;
+		$tvaOverheadData["annualformatted"] = $tviAnnualFormatted;
 
 		return $tvaOverheadData;
 	}

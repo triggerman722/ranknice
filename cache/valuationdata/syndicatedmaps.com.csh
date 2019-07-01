@@ -1,0 +1,1 @@
+{"revenuevaluationformatted":"1,267.00","valuationformatted":"80,278.90","rankvalueestimateformatted":"70,818.00","domainvalueestimateformatted":"5.00"}

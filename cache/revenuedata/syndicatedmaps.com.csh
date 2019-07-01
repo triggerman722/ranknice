@@ -1,0 +1,1 @@
+{"dailyformatted":"1.42","monthlyformatted":"43.27","annualformatted":"519.26","annualrevenue":519.264}

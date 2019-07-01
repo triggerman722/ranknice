@@ -1,0 +1,1 @@
+{"dailyformatted":"251","monthlyformatted":"7,645","annualformatted":"91,740"}
